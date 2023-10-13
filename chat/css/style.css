@@ -1,0 +1,57 @@
+.logo{
+      /* border: 2px solid; */
+      display: block;
+      margin: auto;
+      height: 70px;
+      width: 70px;
+}
+ body{
+      border: 2px solid;
+ }
+
+ .container{
+      border: 2px solid;
+      max-width: 100vh;
+      margin: auto;
+      height: 70vh;
+      overflow-y: auto;
+ }
+
+ .mssg{
+      /* border: 2px solid; */
+      background-color: antiquewhite;
+      width: 36vh;
+      margin: 14px 2px;
+      padding: 10px;
+      border-radius: 9px;
+ }
+ 
+ .left{
+      float:left;
+      clear:both;
+ }
+ .right{
+      float:right;
+      clear:both;
+ }
+
+ #formId{
+      /* border: 2px solid; */
+      text-align: center;
+      margin-top: 2px;
+ }
+
+ #mssgInp{
+      width: 40vh;
+      height: 25px;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+ }
+
+ .sendBtn{
+      height: 30px;
+      border-top-right-radius:7px ;
+      border-bottom-right-radius: 7px;
+ }
+
+ 
