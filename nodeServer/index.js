@@ -28,11 +28,15 @@ io.on("connection",socket=>{           // This is instance of socket.io. This li
             console.log("NewUserJoined ",name3);
             users[socket.id]=name3;
             socket.broadcast.emit("user-joined",name3);
+           
+      });
+      socket.on("send",message=>{ // send is particular event if happens and message is the call back fucntion 
+            socket.broadcast.emit('recieve',{message:message,name3:users[socket.id]})
+      });
 
-            socket.on("send",message=>{ // send is particular event if happens and message is the call back fucntion 
-                  socket.broadcast.emit('recieve',{message:message,name3:users[socket.id]})
-            })
-      })
-
+      socket.on("disconnect",doThis=>{ // to inform all client when users lefts the chat
+            socket.broadcast.emit("left",users[socket.id]);
+            delete users[socket.id];
+      });
 
 })

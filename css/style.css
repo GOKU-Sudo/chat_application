@@ -1,3 +1,10 @@
+body{
+     /* border: 2px solid; */
+     background-color: rgb(136, 156, 227);
+     /* font-family: 'Times New Roman', Times, serif;
+      */
+      font-family: 'Open Sans', sans-serif;
+}
 .logo{
       /* border: 2px solid; */
       display: block;
@@ -5,20 +12,24 @@
       height: 70px;
       width: 70px;
 }
- body{
-      border: 2px solid;
- }
 
  .container{
-      border: 2px solid;
-      max-width: 100vh;
-      margin: auto;
-      height: 70vh;
+      
+      max-width: 120vh;
+      /* margin: auto; */
+      margin-top: 5vh;
+      height: 75vh;
       overflow-y: auto;
+
+      border-radius: 10px;
+
+      background-color: #302e38;
+      border: none;
  }
 
  .mssg{
       /* border: 2px solid; */
+      word-wrap: break-word;
       background-color: antiquewhite;
       width: 36vh;
       margin: 14px 2px;
@@ -35,6 +46,29 @@
       clear:both;
  }
 
+ .middle{
+     /* border: 2px solid; */
+     background-color: #1CAC78;
+     max-width: 15vw;                    /* when user joined */
+     word-wrap: break-word;
+     color: white;
+     display: block;
+     margin: 14px auto;
+     clear: both;
+     text-align: center;
+ }
+
+ .leave{      /* when used lefe*/
+     background-color: rgb(182, 140, 140);
+     max-width: 15vw;                    /* when user joined */
+     word-wrap: break-word;
+     color: white;
+     display: block;
+     margin: 14px auto;
+     clear: both;
+     text-align: center;
+ }
+
  #formId{
       /* border: 2px solid; */
       text-align: center;
@@ -43,15 +77,18 @@
 
  #mssgInp{
       width: 40vh;
-      height: 25px;
+      height: 35px ;
+      padding: 10px;
       border-top-left-radius: 7px;
       border-bottom-left-radius: 7px;
+      border: none;
  }
 
  .sendBtn{
-      height: 30px;
+      height: 35px;
       border-top-right-radius:7px ;
       border-bottom-right-radius: 7px;
+      background-color: #1CAC78;
  }
 
  
