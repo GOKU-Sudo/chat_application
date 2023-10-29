@@ -6,7 +6,8 @@ const http = require('http');
 const httpServer = http.createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: 'http://127.0.0.1:5500',
+//     origin: 'http://127.0.0.1:5501',
+    origin: '*',
 //     methods: ["GET", "POST"],
     methods: " ",
   }
@@ -17,7 +18,9 @@ const io = require("socket.io")(httpServer, {
 
 
 
-httpServer.listen(3000);
+httpServer.listen(3000,()=>{
+      console.log("server running boss!!");
+});
 const users = {};
 
 // Allow requests from all origins/particular origins
