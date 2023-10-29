@@ -57,3 +57,14 @@ const message=mssgInp.value;
 socket.on("left",name3=>{   // recieve from server when user lefts the chat
   appendUserJoinedShowAndMessage(`${name3} left the chat`,"leave");
 });
+
+function openChildWindow() {
+  // Open the child window
+  var childWindow = window.open('/IDE/cpp.html', '_blank');
+
+  // Add a listener to the child window's 'beforeunload' event
+  childWindow.addEventListener('beforeunload', function () {
+    // Close the child window
+    childWindow.close();
+  });
+}
