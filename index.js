@@ -1,21 +1,25 @@
 // This js file will set up and manage the users connections
 
+// const express = require('express');
+// const app = express();
+// const http = require('http');
+// const httpServer = http.createServer(app);
+// const io = require("socket.io")(httpServer, {
+//   cors: {
+// //     origin: 'http://127.0.0.1:5501',
+//     origin: '*',
+// //     methods: ["GET", "POST"],
+//     methods: " ",
+//   }
+// });
+
 const express = require('express');
 const app = express();
 const http = require('http');
-const httpServer = http.createServer(app);
-const io = require("socket.io")(httpServer, {
-  cors: {
-//     origin: 'http://127.0.0.1:5501',
-    origin: '*',
-//     methods: ["GET", "POST"],
-    methods: " ",
-  }
-});
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
 
-// app.get('/', (req, res)=> {
-//       res.render('nodeServer/public/index.html');
-// });
 
 app.use(express.static('public'));
 
@@ -30,7 +34,7 @@ app.get('/',(req,res)=>{
 
 const port=process.env.port || 5000;
 
-httpServer.listen(port,()=>{
+server.listen(port,()=>{
       console.log("server running boss!!");
 });
 const users = {};
