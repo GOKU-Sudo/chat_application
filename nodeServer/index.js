@@ -13,6 +13,11 @@ const io = require("socket.io")(httpServer, {
   }
 });
 
+app.get('/', (req, res)=> {
+      res.render('index.html');
+});
+    
+
 // const io = require("socket.io")(3000);
 // const cors = require("cors");
 
