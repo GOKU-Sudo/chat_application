@@ -13,10 +13,15 @@ const io = require("socket.io")(httpServer, {
   }
 });
 
-app.get('/', (req, res)=> {
-      res.render('/nodeServer/index.html');
-});
+// app.get('/', (req, res)=> {
+//       res.render('nodeServer/public/index.html');
+// });
 
+app.use(express.static('public'));
+
+app.get('/',(req,res)=>{
+      res.sendFile(__dirname+'/public/index.html');
+});
 // hi
     
 
