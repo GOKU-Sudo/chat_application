@@ -14,7 +14,7 @@ const io = require("socket.io")(httpServer, {
 });
 
 app.get('/', (req, res)=> {
-      res.render('index.html');
+      res.render('/INT219_PROJECT/index.html');
 });
     
 
