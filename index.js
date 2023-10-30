@@ -28,9 +28,9 @@ app.get('/',(req,res)=>{
 // const io = require("socket.io")(3000);
 // const cors = require("cors");
 
+const port=process.env.port || 5000;
 
-
-httpServer.listen(5000,()=>{
+httpServer.listen(port,()=>{
       console.log("server running boss!!");
 });
 const users = {};
