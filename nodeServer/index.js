@@ -16,6 +16,8 @@ const io = require("socket.io")(httpServer, {
 app.get('/', (req, res)=> {
       res.render('/nodeServer/index.html');
 });
+
+// hi
     
 
 // const io = require("socket.io")(3000);
