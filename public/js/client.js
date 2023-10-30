@@ -1,5 +1,5 @@
 
-const socket = io("localhost:3000", {
+const socket = io("https://chatgoku.onrender.com:3000", {
   extraHeaders: {
     "my-custom-header": "abcd"
   }
