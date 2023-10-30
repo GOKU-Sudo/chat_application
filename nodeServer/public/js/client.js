@@ -45,8 +45,9 @@ formId.addEventListener("submit",(e)=>{ // event that listens on submit
                                           // and send the message to the chat box
 const message=mssgInp.value;
  if(!message){
-  return false;
- }
+   e.preventDefault();                  
+   return false;
+  }
   e.preventDefault();                  
   
   appendUserJoinedShowAndMessage(`you: ${message}`,"right");
