@@ -1,8 +1,8 @@
 
-const socket = io("https://chatgoku.onrender.com:3000", {
-  extraHeaders: {
-    "my-custom-header": "abcd"
-  }
+const socket = io("https://chatgoku.onrender.com:5000", {
+  // extraHeaders: {
+  //   "my-custom-header": " "
+  // }
 });
 
 

@@ -7,7 +7,7 @@ const httpServer = http.createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
 //     origin: 'http://127.0.0.1:5501',
-    origin: 'https://chatgoku.onrender.com    ',
+    origin: '*',
 //     methods: ["GET", "POST"],
     methods: " ",
   }
@@ -30,7 +30,7 @@ app.get('/',(req,res)=>{
 
 
 
-httpServer.listen(3000,()=>{
+httpServer.listen(5000,()=>{
       console.log("server running boss!!");
 });
 const users = {};
