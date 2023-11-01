@@ -12,6 +12,8 @@ socket.current = io("http://localhost:5000/");
 
 
 // const socket=io('http://localhost:3000',{transports:["websocket"]});
+//try
+
 
 const formId =document.getElementById("formId");
 const mssgInp =document.getElementById("mssgInp");
