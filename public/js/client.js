@@ -4,7 +4,7 @@
 //   //   "my-custom-header": " "
 //   // }
 // });
-const socket=io("http://localhost:5000");
+const socket=io("https://chatgoku.onrender.com/");
 
 // const io = require("socket.io-client");
 // const io = require("socket.io-client");
