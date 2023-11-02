@@ -4,7 +4,7 @@
 //   //   "my-custom-header": " "
 //   // }
 // });
-const socket=io();
+const socket=io("http://localhost:5000");
 
 // const io = require("socket.io-client");
 // const io = require("socket.io-client");
