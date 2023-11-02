@@ -6,12 +6,6 @@
 // });
 const socket=io("https://chatgoku.onrender.com/");
 
-// const io = require("socket.io-client");
-// const io = require("socket.io-client");
-// socket.current = io("http://localhost:5000/");
-
-
-// const socket=io('http://localhost:3000',{transports:["websocket"]});
 
 const formId =document.getElementById("formId");
 const mssgInp =document.getElementById("mssgInp");
