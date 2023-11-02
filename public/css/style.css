@@ -99,10 +99,9 @@ body {
 
 /* Responsiveness */
 
-@media (max-width: 356px) and (min-width: 200px) {
+@media (max-width: 414px) and (min-width: 200px) {
      .container {
           max-width: 90vw;
-          /* margin: auto; */
           margin-top: 3vh;
           
 
@@ -115,6 +114,11 @@ body {
 
      .send {
           margin-top: 8px;
+          
+     }
+
+     #mssgInp{
+          max-width: 77vw;
      }
 
      .middle {
