@@ -99,7 +99,7 @@ body {
 
 /* Responsiveness */
 
-@media only screen and (max-width: 356px) {
+@media (max-width: 356px) and (min-width: 200px) {
      .container {
           max-width: 90vw;
           /* margin: auto; */
