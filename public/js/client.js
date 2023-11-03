@@ -4,8 +4,7 @@
 //   //   "my-custom-header": " "
 //   // }
 // });
-const socket=io("https://chatgoku.onrender.com/");
-
+const socket=io("http://localhost");
 
 const formId =document.getElementById("formId");
 const mssgInp =document.getElementById("mssgInp");

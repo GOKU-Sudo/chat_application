@@ -20,7 +20,7 @@ body {
      /* margin: auto; */
      margin-top: 5vh;
      height: 75vh;
-     overflow-y: auto;
+     overflow-y: hidden;
 
      border-radius: 10px;
 
