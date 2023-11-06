@@ -67,10 +67,6 @@ socket.emit("ReqDB");
 
 
 
-
-
-socket.emit("new-user-joined",promptUsername); //
-
 socket.on("user-joined",name3=>{
   appendUserJoinedShowAndMessage(`${name3} joined the chat`,'middle');
 })
