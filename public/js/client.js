@@ -24,7 +24,6 @@ let counter;
 
 socket.on("SendDB", DB2 => {
   DB = DB2;
-  console.log(DB);
   counter=0;
   do{
     do{
