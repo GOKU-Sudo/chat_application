@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <style>
-		#mylink{
-			font-size: 25px;
-		}
-	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+
 </head>
+
 <body>
 
-      <header>
+	<header>
 		<h1>Login</h1>
 	</header>
 
-	<form action="/login" method="POST">
-		<fieldset>
-				
-			<label>Email ID</label>
-			<input type ="email" id = 'email' name="email" placeholder="abc@example.com" required>
-			<br><br>
+	<div class="container">
 
-			<label>Password</label>
-			<input type="password" id = "password" name="password" required>
-			<br><br>
+		<form action="/login" method="POST">
+			<fieldset>
+				<div class="container-inside">
+					<label>Email ID</label>
+					<input type="email" class="inputField" id='email' name="email" placeholder="abc@example.com" required>
 
-			<button type ="reset">Reset</button>
-			<button type ="submit">Submit</button>
-		</fieldset>
-        </form>
-        <br><br>
-        <a id="mylink" href="./registration.html">register</a>
-      
+
+					<label>Password</label>
+					<input type="password" class="inputField" id="password" name="password" required>
+			      <div>
+				<div class="buttonsDiv">
+					<button type="reset" class="buttons">Reset</button>
+					<button type="submit" class="buttons">Submit</button>
+				<div>
+			</fieldset>
+		</form>
+
+		<a id="mylink" href="./registration.html">register</a>
+	</div>
 </body>
+
 </html>
