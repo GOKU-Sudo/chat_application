@@ -1,28 +1,12 @@
 
-// const socket = io("http://localhost:5000", {
-//   // extraHeaders: {
-//   //   "my-custom-header": " "
-//   // }
-// });
-// var http = require('http');
-// const users = require('./data.js').userDB;
 
-
-
-
-
-// require("@babel/register");
-
-// const users = require('./data.js').userDB;
-// console.log(users);
-
-const socket=io();
+const socket=io("https://chatgoku.onrender.com/");
 
 const formId =document.getElementById("formId");
 const mssgInp =document.getElementById("mssgInp");
 const mssgContainer =document.querySelector(".container");
 
-// console.log(mssgContainer.outerHTML);
+
 
 const appendUserJoinedShowAndMessage=(message,position)=>{  // function to display the user name when joined the chat
   const userJoinedMessage=document.createElement('div');
@@ -33,30 +17,6 @@ const appendUserJoinedShowAndMessage=(message,position)=>{  // function to displ
 }
 
 
-// let bool;
-
-// let counter=0;
-
-// while(true){
-//   counter++;
-//   if(counter>5){
-//     window.close();
-//   }
-//   name2=prompt("Enter Username :");
-//   if((name2==null || name2.length==0)){
-//     name2=prompt("Enter Username :");
-//   }
-//   else{
-//     bool=users.find((data) => name2===data.usernamae);
-//     if(!bool){
-//       prompt("Wrong Username");
-//     }
-//     else{
-//       break;
-//     }
-//   }
-// }
-
 let DB=[];
 let promptUsername;
 let bool;
@@ -65,8 +25,8 @@ let counter;
 socket.on("SendDB", DB2 => {
   DB = DB2;
   console.log(DB);
+  counter=0;
   do{
-    counter=0;
     do{
       promptUsername=prompt("Enter Username :");
     }while(promptUsername==null || promptUsername.trim().length==0)
@@ -94,18 +54,18 @@ socket.on("SendDB", DB2 => {
     }
   
   }while(counter<5);
+  if(counter==5) {
+    alert("Exceded Try limit \n Login again");
+    socket.disconnect(); // Added disconnect code to disconnect socket connection
+  }
+
+  
 });
 
 
 socket.emit("ReqDB");
 
 
-
-
-if(counter==5) window.close();
-
-console.log(promptUsername);
-// console.log(DB);
 
 
 
@@ -119,12 +79,6 @@ socket.on("recieve",messageRecieved=>{ //recieving message from server sent by u
   appendUserJoinedShowAndMessage(`${messageRecieved.name3}: ${messageRecieved.message}`,"left");
 } )
 
-// socket.on("SendDB", DB2 => {
-//   DB = DB2;
-//   if (DB.length > 0) {
-//     console.log(DB);
-//   }
-// });
 
 formId.addEventListener("submit",(e)=>{ // event that listens on submit
                                           // and send the message to the chat box

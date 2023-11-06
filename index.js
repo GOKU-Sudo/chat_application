@@ -11,8 +11,8 @@ const bodyParser = require('body-parser');
 // const users = require('./public/js/data.js').userDB;
 const io = require("socket.io")(httpServer, {
     cors: {
-        //     origin: 'https://chatgoku.onrender.com/',
-        origin: '*',
+            origin: 'https://chatgoku.onrender.com/',
+        // origin: '*',
         methods: ["GET", "POST"],
         //     methods: " ",
     }
@@ -24,7 +24,7 @@ const userDB = [];
 
 
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(express.static(path.join(__dirname,'./public')));
+
 
 
 app.use(express.static('public'));
@@ -35,8 +35,6 @@ app.get('/',(req,res)=>{
 // hi
     
 
-// const io = require("socket.io")(3000);
-// const cors = require("cors");
 
 const port=process.env.port || 5000;
 
