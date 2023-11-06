@@ -4,7 +4,19 @@
 //   //   "my-custom-header": " "
 //   // }
 // });
-const socket=io("http://localhost");
+// var http = require('http');
+// const users = require('./data.js').userDB;
+
+
+
+
+
+// require("@babel/register");
+
+// const users = require('./data.js').userDB;
+// console.log(users);
+
+const socket=io();
 
 const formId =document.getElementById("formId");
 const mssgInp =document.getElementById("mssgInp");
@@ -20,16 +32,84 @@ const appendUserJoinedShowAndMessage=(message,position)=>{  // function to displ
   mssgContainer.append(userJoinedMessage);
 }
 
-let name2=" ";
 
-do{
-  name2=prompt("Enter your name :");
-}while(name2==null || name2.length==0){
+// let bool;
+
+// let counter=0;
+
+// while(true){
+//   counter++;
+//   if(counter>5){
+//     window.close();
+//   }
+//   name2=prompt("Enter Username :");
+//   if((name2==null || name2.length==0)){
+//     name2=prompt("Enter Username :");
+//   }
+//   else{
+//     bool=users.find((data) => name2===data.usernamae);
+//     if(!bool){
+//       prompt("Wrong Username");
+//     }
+//     else{
+//       break;
+//     }
+//   }
+// }
+
+let DB=[];
+let promptUsername;
+let bool;
+let counter;
+
+socket.on("SendDB", DB2 => {
+  DB = DB2;
+  console.log(DB);
+  do{
+    counter=0;
+    do{
+      promptUsername=prompt("Enter Username :");
+    }while(promptUsername==null || promptUsername.trim().length==0)
+
+    
+    // let User=DB.find((data) => name2===data.username);
+    // const usernames = User.map(user => user.username);
+    const User = DB.find((data) => promptUsername.trim() === data.username);
+
+    if(User==undefined){
+      counter++;
+    }
+    else{
+      for (const key in User){
+        if(User[key]===promptUsername){
+          bool=true;
+          break;
+      }
+        else bool=false; 
+      }
+    }
+    if(bool==true) {
+      socket.emit("new-user-joined",promptUsername);
+      break;
+    }
   
-};
+  }while(counter<5);
+});
 
-console.log(mssgInp.value);
-socket.emit("new-user-joined",name2); //
+
+socket.emit("ReqDB");
+
+
+
+
+if(counter==5) window.close();
+
+console.log(promptUsername);
+// console.log(DB);
+
+
+
+socket.emit("new-user-joined",promptUsername); //
 
 socket.on("user-joined",name3=>{
   appendUserJoinedShowAndMessage(`${name3} joined the chat`,'middle');
@@ -38,6 +118,13 @@ socket.on("user-joined",name3=>{
 socket.on("recieve",messageRecieved=>{ //recieving message from server sent by users and dsiplaying it on chat box
   appendUserJoinedShowAndMessage(`${messageRecieved.name3}: ${messageRecieved.message}`,"left");
 } )
+
+// socket.on("SendDB", DB2 => {
+//   DB = DB2;
+//   if (DB.length > 0) {
+//     console.log(DB);
+//   }
+// });
 
 formId.addEventListener("submit",(e)=>{ // event that listens on submit
                                           // and send the message to the chat box
@@ -57,13 +144,3 @@ socket.on("left",name3=>{   // recieve from server when user lefts the chat
   appendUserJoinedShowAndMessage(`${name3} left the chat`,"leave");
 });
 
-function openChildWindow() {
-  // Open the child window
-  var childWindow = window.open('/IDE/cpp.html', '_blank');
-
-  // Add a listener to the child window's 'beforeunload' event
-  childWindow.addEventListener('beforeunload', function () {
-    // Close the child window
-    childWindow.close();
-  });
-}
