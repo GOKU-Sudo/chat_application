@@ -1,6 +1,6 @@
 
 
-const socket=io("https://chatgoku.onrender.com/");
+// const socket=io("https://chatgoku.onrender.com/");
 
 
 const socket=io("");
@@ -33,7 +33,7 @@ socket.on("SendDB", DB2 => {
       promptUsername=prompt("Enter Username :");
     }while(promptUsername===null || promptUsername.trim().length==0)
 
-    
+   
     // let User=DB.find((data) => name2===data.username);
     // const usernames = User.map(user => user.username);
     const User = DB.find((data) => promptUsername.trim() === data.username);
@@ -50,6 +50,7 @@ socket.on("SendDB", DB2 => {
         else bool=false; 
       }
     }
+
     if(bool==true) {
       socket.emit("new-user-joined",promptUsername);
       bool=false;
