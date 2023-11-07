@@ -84,6 +84,8 @@ app.post('/register', async (req, res) => {
                     let usrname = foundUser.username;
                     // let path=__dirname+"/index.html";
                     // res.send(`<div align ='center'><h2>login successful</h2></div><br><br><br><div align ='center'><h3>Hello ${usrname}</h3></div><br><br><div align='center'><a href="index.html">logout</a></div>`);
+                    let logedInUsers= JSON.stringify(usersIo);
+            console.log(`log in users list\n ${logedInUsers}`);
                     res.sendFile(__dirname+"/index.html");
               } else {
                   res.send("<div align ='center'><h2>Invalid email or password</h2></div><br><br><div align ='center'><a href='/Login/login.html'>login again</a></div>");
@@ -118,7 +120,12 @@ io.on("connection",socket=>{           // This is instance of socket.io. This li
 
             socket.on("new-user-joined",name3=>{  // user-joined is a event. socket.on handles what to do  with the particular user which is connected to socket.io server.
             console.log("NewUserJoined ",name3);
-            usersIo[socket.id]=name3;
+            
+                
+                usersIo[socket.id]=name3;
+           
+            // let logedInUsers= JSON.stringify(usersIo);
+            // console.log(`log in users list\n ${logedInUsers}`);
             socket.broadcast.emit("user-joined",name3);
            
       });
@@ -128,6 +135,7 @@ io.on("connection",socket=>{           // This is instance of socket.io. This li
 
       socket.on("disconnect",doThis=>{ // to inform all client when users lefts the chat
             socket.broadcast.emit("left",usersIo[socket.id]);
+            console.log(`${usersIo[socket.id]} left`);
             delete usersIo[socket.id];
       });
 

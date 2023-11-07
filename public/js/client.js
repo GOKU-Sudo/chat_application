@@ -1,6 +1,6 @@
 
 
-const socket=io("https://chatgoku.onrender.com/");
+const socket=io("");
 
 const formId =document.getElementById("formId");
 const mssgInp =document.getElementById("mssgInp");
@@ -28,19 +28,19 @@ socket.on("SendDB", DB2 => {
   do{
     do{
       promptUsername=prompt("Enter Username :");
-    }while(promptUsername==null || promptUsername.trim().length==0)
+    }while(promptUsername===null || promptUsername.trim().length==0)
 
     
     // let User=DB.find((data) => name2===data.username);
     // const usernames = User.map(user => user.username);
-    const User = DB.find((data) => promptUsername.trim() === data.username);
+    const User = DB.find((data) => promptUsername.trim() == data.username);
 
     if(User==undefined){
       counter++;
     }
     else{
       for (const key in User){
-        if(User[key]===promptUsername){
+        if(User[key]==promptUsername){
           bool=true;
           break;
       }
@@ -53,7 +53,7 @@ socket.on("SendDB", DB2 => {
     }
   
   }while(counter<5);
-  if(counter==5) {
+  if(counter===5) {
     alert("Exceded Try limit \n Login again");
     socket.disconnect(); // Added disconnect code to disconnect socket connection
   }
