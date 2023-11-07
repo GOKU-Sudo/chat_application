@@ -3,7 +3,7 @@
 const socket=io("https://chatgoku.onrender.com/");
 
 
-// const socket = io(" ");
+// const socket = io("");
 
 const formId = document.getElementById("formId");
 const mssgInp = document.getElementById("mssgInp");
@@ -17,6 +17,7 @@ const appendUserJoinedShowAndMessage = (message, position) => {  // function to 
   userJoinedMessage.classList.add("mssg");
   userJoinedMessage.classList.add(position);
   mssgContainer.append(userJoinedMessage);
+  mssgContainer.scrollTop = mssgContainer.scrollHeight;
 }
 
 

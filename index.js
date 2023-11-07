@@ -80,8 +80,6 @@ app.post('/login', async (req, res) => {
             const passwordMatch = await bcrypt.compare(submittedPass, storedPass);
             if (passwordMatch) {
                 let usrname = foundUser.username;
-                // let path=__dirname+"/index.html";
-                // res.send(`<div align ='center'><h2>login successful</h2></div><br><br><br><div align ='center'><h3>Hello ${usrname}</h3></div><br><br><div align='center'><a href="index.html">logout</a></div>`);
                 let logedInUsers = JSON.stringify(usersIo);
                 console.log(`log in users list\n ${logedInUsers}`);
                 res.sendFile(__dirname + "/index.html");
