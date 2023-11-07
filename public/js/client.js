@@ -1,5 +1,8 @@
 
 
+const socket=io("https://chatgoku.onrender.com/");
+
+
 const socket=io("");
 
 const formId =document.getElementById("formId");

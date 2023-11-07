@@ -15,7 +15,7 @@ const io = require("socket.io")(httpServer, {
         // origin: '*',
         methods: ["GET", "POST"],
         //     methods: " ",
-    }
+   
 });
 
 const userDB = [];
