@@ -30,9 +30,7 @@ let counter;
 socket.on("SendDB", (DB1, DB2) => {
   DB1 = DB1;
   DB2 = DB2;
-  console.log(DB2);
   let loggedInUsers = Object.values(DB2);
-  console.log(loggedInUsers);
   counter = 0;
   do {
     do {
@@ -58,7 +56,6 @@ socket.on("SendDB", (DB1, DB2) => {
     for (const i in loggedInUsers) {
       if (promptUsername == loggedInUsers[i]) {
         boolLogged = true;
-        console.log(`${promptUsername} and ${loggedInUsers[i]}`)
         break;
       }
       else{
