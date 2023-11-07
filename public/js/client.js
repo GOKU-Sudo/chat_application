@@ -1,6 +1,6 @@
 
 
-const socket=io("https://chatgoku.onrender.com/");
+// const socket=io("https://chatgoku.onrender.com/");
 
 
 const socket=io("");
