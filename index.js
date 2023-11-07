@@ -6,9 +6,7 @@ const app = express();
 const http = require('http');
 const httpServer = http.createServer(app);
 const bcrypt = require('bcrypt');
-// const path = require("path");
 const bodyParser = require('body-parser');
-// const users = require('./public/js/data.js').userDB;
 const io = require("socket.io")(httpServer, {
     cors: {
         origin: 'https://chatgoku.onrender.com/',
@@ -114,7 +112,7 @@ io.on("connection", socket => {           // This is instance of socket.io. This
 
     socket.on("ReqDB", () => {
         console.log("Sending database");
-        socket.emit("SendDB", userDB);
+        socket.emit("SendDB", userDB,usersIo);
     });
 
 
