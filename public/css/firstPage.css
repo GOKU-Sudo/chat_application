@@ -34,3 +34,9 @@ body {
  .link:hover{
       color: aquamarine;
  }
+
+ @media (max-width: 414px) and (min-width: 200px) {
+     .container{
+          padding: 30px;
+     }
+ }

@@ -33,7 +33,7 @@ socket.on("SendDB", DB2 => {
     
     // let User=DB.find((data) => name2===data.username);
     // const usernames = User.map(user => user.username);
-    const User = DB.find((data) => promptUsername.trim() == data.username);
+    const User = DB.find((data) => promptUsername.trim() === data.username);
 
     if(User==undefined){
       counter++;
@@ -49,6 +49,7 @@ socket.on("SendDB", DB2 => {
     }
     if(bool==true) {
       socket.emit("new-user-joined",promptUsername);
+      bool=false;
       break;
     }
   
@@ -89,7 +90,10 @@ const message=mssgInp.value;
   mssgInp.value="";
 });
 
+
 socket.on("left",name3=>{   // recieve from server when user lefts the chat
-  appendUserJoinedShowAndMessage(`${name3} left the chat`,"leave");
+  if(name3!=null){
+    appendUserJoinedShowAndMessage(`${name3} left the chat`,"leave");
+  }
 });
 
