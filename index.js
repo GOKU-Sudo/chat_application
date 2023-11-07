@@ -15,7 +15,7 @@ const io = require("socket.io")(httpServer, {
         // origin: '*',
         methods: ["GET", "POST"],
         //     methods: " ",
-   
+    }
 });
 
 const userDB = [];
@@ -119,13 +119,14 @@ io.on("connection", socket => {           // This is instance of socket.io. This
 
 
     socket.on("new-user-joined", name3 => {  // user-joined is a event. socket.on handles what to do  with the particular user which is connected to socket.io server.
+  
         console.log("NewUserJoined ", name3);
-
 
         usersIo[socket.id] = name3;
 
-        // let logedInUsers= JSON.stringify(usersIo);
-        // console.log(`log in users list\n ${logedInUsers}`);
+        let logedInUsers= JSON.stringify(usersIo);
+        console.log(`logged in users list\n ${logedInUsers}`);
+
         socket.broadcast.emit("user-joined", name3);
 
     });
