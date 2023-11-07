@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/registration.css">
+</head>
+
+<body>
+
+	<header>
+		<h1>Register</h1>
+	</header>
+
+	<div class="container">
+		<form action="/register" method="POST">
+			<!-- <fieldset> -->
+
+				<div class="container-inside">
+					<label>Username</label>
+					<input type="text" class="inputField" id='username' name="username" placeholder="username" required>
+					<!-- <br><br> -->
+
+					<label>Email ID</label>
+					<input type="email" class="inputField" id='email' name="email" placeholder="abc@example.com" required>
+					<!-- <br><br> -->
+
+					<label>Password</label>
+					<input type="password" class="inputField" id="password" name="password" required>
+					<!-- <br><br> -->
+
+
+				</div>
+				<div class="buttonsDiv">
+					<button type="reset" class="buttons">Reset</button>
+					<button type="submit" class="buttons">Submit</button>
+				</div>
+
+			<!-- </fieldset> -->
+		</form>
+		<!-- <br><br> -->
+		<a id="mylink" href="./login.html">login</a>
+
+	</div>
+
+
+</body>
+
+</html>
