@@ -98,7 +98,7 @@ header{
 
 @media (max-width: 414px) and (min-width: 200px) {
     header{
-      top: 29%;
-      width: 70vw;
+      top: 26%;
+      width: 75vw;
     }    
 } 
