@@ -1,8 +1,11 @@
 body {
-     /* border: 2px solid; */
-     background-color: rgb(136, 156, 227);
+     border: 2px solid;
+     /* background-color: rgb(136, 156, 227); */
      /* font-family: 'Times New Roman', Times, serif;
       */
+      background-image: url(/Images/bg3.jpg);
+      background-size:cover;
+      background-repeat: no-repeat;
      font-family: 'Open Sans', sans-serif;
 }
 
@@ -101,6 +104,7 @@ body {
 
 @media (max-width: 414px) and (min-width: 200px) {
      .container {
+         
           max-width: 90vw;
           margin-top: 3vh;
           
