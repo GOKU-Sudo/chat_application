@@ -9,8 +9,8 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 const io = require("socket.io")(httpServer, {
     cors: {
-        // origin: 'https://chatgoku.onrender.com/',
-        origin: '*',
+        origin: 'https://chatgoku.onrender.com/',
+        // origin: '*',
         methods: ["GET", "POST"],
         //     methods: " ",
     }
