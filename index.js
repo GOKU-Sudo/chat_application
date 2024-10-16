@@ -1,4 +1,4 @@
-// This js file will set up and manage the users connections
+// This js file will set up and manage the users connections and messages
 
 
 const express = require('express');
